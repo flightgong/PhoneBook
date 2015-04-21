@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html data-ng-app="phoneBook">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Online Telephone Directory</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link ref="stylesheet" href="css/bootstrap-theme.min.css">
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="app/Libs/angular.min.js"></script>
+    <script src="app/Libs/angular-route.min.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/Factories/AccountFactory.js"></script>
+    <script src="app/Services/ContactService.js"></script>
+    <script src="app/Controllers/IndexController.js"></script>
+    <script src="app/Controllers/AccountController.js"></script>
+    <script src="app/Controllers/TelephoneController.js"></script>
+    <style>
+        #headerinfo {
+            float: right;
+        }
+
+        #body {
+            margin-top: 10%;
+        }
+
+        #content {
+            padding: 10%;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Online Phonebook Directory</a>
+        </div>
+
+        <div id="navbar" class="collapse navbar-collapse">
+
+            <ul class="nav navbar-nav navbar-left">
+                <li id="homeLink" class="active"><a href="#/Home">Home</a></li>
+                <li><a id="aboutLink" href="#/About">About</a></li>
+                <li><a id="contactLink" href="#/Contacts">Contact</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                         <span id="anonymousUser" ng-hide="isAuthenticated">
+                            [Welcome Guest!][<a href="#/Login" id="loginlink">Login</a>/<a href="#/Register"
+                                                                                           id="registerlink">Register</a>]
+                        </span>
+                        <span id="loggedUser" ng-show="isAuthenticated">
+                            [Welcome <span id="userinfo">{{loggedAccount}}</span> !] [<a href="#/logout"
+                                                                                         id="logoutlink">Logout</a>]
+                        </span>
+                </li>
+            </ul>
+
+            <!--<ul class="nav navbar-nav navbar-right">
+                <li><a href="#/Login" data-ng-hide="isAuthenticated">Login</a></li>
+                <li><a href="#/logout" data-ng-show="isAuthenticated">Logout</a></li>
+                <li><a href="#/Register" data-ng-hide="isAuthenticated">Register</a></li>
+
+            </ul>
+
+
+
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">[Welcome, <span>{{loggedAccount}}]</span></a></li>
+
+            </ul>-->
+
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+</nav>
+
+<div id="body" class="container-fluid">
+
+    <div class="row">
+        <div id="content" class="col-md-8 jumbotron" data-ng-view="">
+
+
+        </div>
+
+        <div id="sideBar" class="col-md-4">
+
+            <ul class="nav">
+                <li><a href="#/Reset" data-ng-show="isAuthenticated">Reset Password</a></li>
+                <li><a href="#/EditUserInfo" data-ng-show="isAuthenticated">Edit info</a></li>
+                <li><a href="#/Telephone" data-ng-show="isAuthenticated">TelBook</a></li>
+            </ul>
+
+            <ul class="nav navbar-default">
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+            </ul>
+
+
+        </div>
+    </div>
+</div>
+
+<nav class="navbar navbar-defaultn navbar-fixed-bottom">
+    <div id="footer" class="contianer-fluid">
+        &copy, Marlabs2015
+    </div>
+</nav>
+
+
+</body>
+</html>

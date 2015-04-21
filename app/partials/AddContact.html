@@ -1,0 +1,34 @@
+<div>
+    <h3>Plz add new Contact...</h3>
+
+    <form role="form">
+        <div class="form-group">
+            <label>FirstName</label>
+            <input type="text" ng-model="newContact.firstName" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label>LastName</label>
+            <input type="text" ng-model="newContact.lastName" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label>Email</label>
+            <input type="text" ng-model="newContact.email" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label>Mobile</label>
+            <input type="text" ng-model="newContact.mobile" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label>City</label>
+            <input type="text" ng-model="newContact.city" class="form-control">
+        </div>
+
+        <button type="button" class="btn btn-block btn-primary" data-ng-click="addContact()">Add</button>
+
+
+    </form>
+</div>

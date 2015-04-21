@@ -1,0 +1,36 @@
+<div>
+    {{test}}
+    <h3>Plz Edit Contact...</h3>
+
+    <form role="form">
+        <div class="form-group">
+            <label>FirstName</label>
+            <input type="text" ng-model="data.name" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label>LastName</label>
+            <input type="text" ng-model="editContact.lastName" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label>Email</label>
+            <input type="text" ng-model="editContact.email" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label>Mobile</label>
+            <input type="text" ng-model="editContact.mobile" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label>City</label>
+            <input type="text" ng-model="editContact.city" class="form-control">
+        </div>
+        <span>blabla{{editContact.firstName}}</span>
+
+        <button type="button" class="btn btn-block btn-primary" data-ng-click="editContact()">Submit</button>
+
+
+    </form>
+</div>
